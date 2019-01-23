@@ -1,0 +1,13 @@
+# temp 
+tmp/
+output/
+build/
+
+# Mac
+.DS_Store
+
+# vscode
+.vscode/.vs_code_bazel_build/
+
+# bazel
+bazel-*
