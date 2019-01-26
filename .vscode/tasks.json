@@ -4,9 +4,52 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "run",
+            "command": "${workspaceRoot}/bazel-bin/test/oot-test",
+            "dependsOn": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
             "type": "shell",
-            "command": "echo Hello"
-        }
+            "args": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "build",
+            "command": "bazel",
+            "args": [
+                "build",
+                "//test:oot-test"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "type": "shell",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^.*(\\w:/.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s*error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
     ]
 }

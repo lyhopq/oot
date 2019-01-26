@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/bazel-*": true,
+        "**/.vscode/.vs_code_bazel*": true
+    }
+}
