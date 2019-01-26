@@ -3,6 +3,8 @@
 
 USING_CUM_NS
 
+#include <string>
+
 FIXTURE(VolumeTest)
 {
     TEST("1 tbsp should equal to 3 tsps")

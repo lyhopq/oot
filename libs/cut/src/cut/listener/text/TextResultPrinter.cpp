@@ -1,5 +1,6 @@
 #include <cut/listener/text/TextResultPrinter.h>
 #include <cut/listener/util/Color.h>
+#include <cui/mem/__ScopeExit__.h>
 #include <cut/core/Test.h>
 #include <cut/core/TestResult.h>
 #include <cut/except/TestFailure.h>
@@ -124,6 +125,7 @@ inline std::string TextResultPrinter::toString(const timeval& elapsed) const
 void TextResultPrinter::endTest(const Test& test)
 {
     auto lastest = tests.top();
+    __SCOPE_EXIT__([=] { tests.pop(); delete lastest; });
 
     lastest->isSucc() ? onTestSucc(test)
                       : onTestFail(test, lastest->isFailure());
@@ -132,8 +134,6 @@ void TextResultPrinter::endTest(const Test& test)
 
     out << WHITE << test.getName() << toString(elapsed) << std::endl;
     collectTime(elapsed);
-
-    tests.pop();
 }
 
 inline void TextResultPrinter::onSuite(const Test& test, const std::string& newline)
@@ -153,8 +153,10 @@ void TextResultPrinter::startSuite(const Test& test)
 
 void TextResultPrinter::endSuite(const Test& test)
 {
+    auto lastest = tests.top();
+    __SCOPE_EXIT__([=] { tests.pop(); delete lastest; });
+
     onSuite(test, "");
-    tests.pop();
 }
 
 void TextResultPrinter::addFailure(const TestFailure& fail)
