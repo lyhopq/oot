@@ -2,7 +2,7 @@ language:
   - cpp
 
 install:
-  - sudo pip install cpp-coveralls
+  # - sudo pip install cpp-coveralls
   - sudo apt-get install pkg-config zip g++ zlib1g-dev unzip python
   - wget https://github.com/bazelbuild/bazel/releases/download/0.21.0/bazel-0.21.0-installer-linux-x86_64.sh
   - chmod +x bazel-0.21.0-installer-linux-x86_64.sh
@@ -12,8 +12,8 @@ install:
 script:
   - bazel build //test:oot-test 
   - bazel-bin/test/oot-test
-after_success:
-  - coveralls --root . -E ".*external.*" -E ".*bazel-.*" -E ".*test/.*.cpp.*"
+# after_success:
+  # - coveralls --root . -E ".*external.*" -E ".*bazel-.*" -E ".*test/.*.cpp.*"
 
 notifications:
   email: false
