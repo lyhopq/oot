@@ -5,7 +5,8 @@ cc_library(
       # exclude = [""]    
   ),
   hdrs = glob(["include/**/*.h", "include/**/*.hpp"]),
-  copts = ["-std=c++11", "--coverage"],
+  # copts = ["-std=c++11", "--coverage"],
+  copts = ["-std=c++11"],
   includes = ["include"],
   visibility = ["//visibility:public"],
   deps = ["//libs/cut:cut"],
