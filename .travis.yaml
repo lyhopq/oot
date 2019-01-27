@@ -1,0 +1,14 @@
+language:
+  - cpp
+
+install:
+  - sudo pip install cpp-coveralls
+
+script:
+  - bazel //test:oot-test 
+  - bazel-bin/test/oot-test
+after_success:
+  - coveralls --root . -E ".*external.*" -E ".*bazel-.*" -E ".*test/.*.cpp.*"
+
+notifications:
+  email: false
