@@ -5,7 +5,7 @@ cc_library(
       exclude = ["src/cut/startup/main.cpp"]    
   ),
   hdrs = glob(["include/**/*.h", "include/**/*.hpp"]),
-  copts = ["-std=c++14"],
+  copts = ["-std=c++11"],
   includes = ["include"],
   visibility = ["//visibility:public"],
 )
@@ -17,7 +17,7 @@ cc_library(
       "include/cut/cut.h",
       "include/cut/startup/StartUp.h",
   ],
-  copts = ["-std=c++14"],
+  copts = ["-std=c++11"],
   includes = ["include"],
   visibility = ["//visibility:public"],
 )
