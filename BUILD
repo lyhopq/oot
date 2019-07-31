@@ -9,5 +9,5 @@ cc_library(
   copts = ["-std=c++11"],
   includes = ["include"],
   visibility = ["//visibility:public"],
-  deps = ["//libs/cut:cut"],
+  deps = ["//test/3thrd/cut:cut"],
 )

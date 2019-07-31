@@ -5,7 +5,7 @@ DEST_EXE_NAME = oot-test
 .PHONY:build
 
 all: build
-	cd $(BUILD_DIR);  make -j4
+	cd $(BUILD_DIR);  make -j8
 run: build
 	./$(DEST_DIR)/$(DEST_EXE_NAME)
 clean:

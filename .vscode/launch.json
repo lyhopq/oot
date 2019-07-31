@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            // "program": "${workspaceFolder}/bazel-bin/test/cut-test",
+            // "program": "${workspaceFolder}/bazel-bin/test/oot-test",
             "program": "${workspaceFolder}/_build/test/oot-test",
             "args": [],
             "stopAtEntry": false,

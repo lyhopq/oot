@@ -13,6 +13,5 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 add_subdirectory(src)
 
 if(ENABLE_TEST)
-    add_subdirectory(libs/cut/src)
     add_subdirectory(test)
 endif()
