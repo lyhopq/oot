@@ -5,7 +5,8 @@
     "tasks": [
         {
             "label": "run",
-            "command": "${workspaceRoot}/bazel-bin/test/oot-test",
+            // "command": "${workspaceRoot}/bazel-bin/test/oot-test",
+            "command": "${workspaceRoot}/_build/test/oot-test",
             "dependsOn": "build",
             "presentation": {
                 "echo": true,
@@ -22,10 +23,13 @@
         },
         {
             "label": "build",
-            "command": "bazel",
+            // "command": "bazel",
+            // "args": [
+            //     "build",
+            //     "//test:oot-test"
+            // ],
+            "command": "make",
             "args": [
-                "build",
-                "//test:oot-test"
             ],
             "group": {
                 "kind": "build",
