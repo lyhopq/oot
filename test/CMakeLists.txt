@@ -1,6 +1,6 @@
 project(oot-test)
 
-include_directories(3thrd/cut/include quantity/include)
+include_directories(3thrd/cut/include)
 
 FILE(GLOB_RECURSE all_files
 *.cpp

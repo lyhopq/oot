@@ -11,4 +11,4 @@ run: build
 clean:
 	rm -rf $(BUILD_DIR)
 build:
-	mkdir $(BUILD_DIR);cd $(BUILD_DIR);cmake ..
+	mkdir -p $(BUILD_DIR);cd $(BUILD_DIR);cmake ..
