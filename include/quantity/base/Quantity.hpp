@@ -2,7 +2,7 @@
 
 template <typename Unit>
 Quantity<Unit>::Quantity(const Amount amount, const Unit unit)
-  : amountInBaseUnit(unit * amount)
+    : amountInBaseUnit(unit * amount)
 {
 }
 
